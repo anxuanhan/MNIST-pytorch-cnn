@@ -52,9 +52,9 @@ test_loader = DataLoader(test_dataset,batch_size = 1000, shuffle= True )
 class CNN(nn.Module):
     def __init__(self):
         super().__init__()
-        self.conv1 = nn.Conv2d(1,10,5)#1表示灰度通道，10表示输出通道，5个卷积核
+        self.conv1 = nn.Conv2d(1,10,5)#1表示颜色是灰色，10表示10个卷积核，5表示卷积核的尺寸是5x5
         self.pool1 = nn.MaxPool2d(2,2)# 2×2的最大池化层
-        self.conv2 = nn.Conv2d(10,20,3)#20个输出通道，3个卷积核
+        self.conv2 = nn.Conv2d(10,20,3)#20个卷积核，尺寸是3x3
         self.pool2 = nn.MaxPool2d(2,2)# 2×2的最大池化层
         self.fc1 = nn.Linear(20*5*5,128)#128个神经元的线性层
         self.fc2 = nn.Linear(128,10)#输出层
